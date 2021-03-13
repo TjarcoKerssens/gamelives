@@ -21,8 +21,7 @@ class LivesState extends StateNotifier<Game> {
     state = state.addLives(player, amount);
   }
 
-  /// Update the state to hide the winner dialog after a game is finished
-  void closeWinnerDialog() {
-    state = state.setShowWinner(false);
+  void replay() {
+    state = state.restart();
   }
 }

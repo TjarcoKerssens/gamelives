@@ -10,6 +10,9 @@ Future<void> main() async {
 
 void setFullscreenApp() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+  ]);
   await SystemChrome.setEnabledSystemUIOverlays([]);
 }
 

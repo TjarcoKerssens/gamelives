@@ -13,6 +13,8 @@ class _NewGameDialogState extends State<NewGameDialog> {
 
   @override
   Widget build(BuildContext context) {
+    livesTextController.text = 
+        context.read(livesProvider).game.initalLives.toString();
     return Dialog(
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(20.0),

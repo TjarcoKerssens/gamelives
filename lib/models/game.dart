@@ -6,6 +6,7 @@ import 'package:game_lives_counter/models/player.dart';
 class Game {
   late Map<Player, int> _lives;
   bool _showWinner = true;
+  late final int initalLives;
 
   int get livesRed => getLives(Player.red);
   int get livesBlue => getLives(Player.blue);
@@ -15,11 +16,13 @@ class Game {
       Player.blue: lives,
       Player.red: lives,
     };
+    this.initalLives = lives;
   }
 
   Game.copied(Game game) {
     this._lives = game._lives;
     this._showWinner = game._showWinner;
+    this.initalLives = game.initalLives;
   }
 
   int getLives(Player player) {
@@ -41,9 +44,8 @@ class Game {
     return this._showWinner && this.isFinished();
   }
 
-  Game setShowWinner(bool showWinner) {
-    this._showWinner = showWinner;
-    return Game.copied(this);
+  Game restart() {
+    return Game(this.initalLives);
   }
 
   String getWinner() {

@@ -173,9 +173,8 @@ class GameScreen extends ConsumerWidget {
                   textAlign: TextAlign.center,
                 ),
                 ElevatedButton(
-                  onPressed: () =>
-                      context.read(livesProvider).closeWinnerDialog(),
-                  child: Text('close'),
+                  onPressed: () => context.read(livesProvider).replay(),
+                  child: Text('Play again'),
                 ),
               ],
               mainAxisAlignment: MainAxisAlignment.spaceAround,
